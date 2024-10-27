@@ -1,5 +1,6 @@
 #include <iostream>
-#include<string>
+#include <string>
+#include <cassert>
 
 int nameIndex = 0;
 
@@ -72,6 +73,8 @@ class Director : public Worker {
     int vectorWork = 0;
 public:
     Director(int inCountManagers,int inCountWorkers) {
+        assert(inCountManagers > 0);
+        assert(inCountWorkers > 0);
         countManagers = inCountManagers;
         hisManager = new Manager * [inCountManagers];
         for (int i = 0; i < inCountManagers;++i) {

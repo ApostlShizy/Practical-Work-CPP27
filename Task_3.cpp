@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cassert>
 
 int neighbours = 0;
 
@@ -98,6 +99,7 @@ class Forest {
 
 public:
     Forest(int inCount) : count(inCount) {
+        assert(inCount > 0);
         newForest = new Tree * [inCount];
         for (int i = 0; i < inCount; ++i) {
             std::cout << '\n' + std::string(30, '-') + '\n';
